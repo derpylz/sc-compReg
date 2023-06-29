@@ -114,7 +114,7 @@ sc_compreg.default <- function(O1,
 
     if (! is(O1.idx, 'numeric') &
         ! is(O1.idx, 'matrix') &
-        ! is(E1.idx, 'integer')) {
+        ! is(O1.idx, 'integer')) {
         if (length(O1.idx < 1) | O1.idx[1] %% 1 != 0) {
             stop('O1.idx must be a vector of integer (indices).')
         }
@@ -147,7 +147,7 @@ sc_compreg.default <- function(O1,
 
     if (! is(O2.idx, 'numeric') &
         ! is(O2.idx, 'matrix') &
-        ! is(E1.idx, 'integer')) {
+        ! is(O2.idx, 'integer')) {
         if (length(O2.idx < 1) | O2.idx[1] %% 1 != 0) {
             stop('O2.idx must be a vector of integer (indices).')
         }
@@ -157,7 +157,7 @@ sc_compreg.default <- function(O1,
 
     if (! is(E2.idx, 'numeric') &
         ! is(E2.idx, 'matrix') &
-        ! is(E1.idx, 'integer')) {
+        ! is(E2.idx, 'integer')) {
         if (length(E2.idx < 1) | E2.idx[1] %% 1 != 0) {
             stop('E2.idx must be a vector of integer (indices).')
         }
