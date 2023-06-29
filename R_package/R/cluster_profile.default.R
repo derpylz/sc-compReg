@@ -51,6 +51,7 @@ cluster_profile.default <- function(O1,
         gp = which(O1.idx == i)
         if (length(gp) == 0) next
         O1.mean[1:m, i] = rowMeans(O1[pf1, gp] > 0)
+        if (sum.d1 == 0) next
         O1.mean[(1+m) : (m + sum.d1), i] = rowMeans(O1[d1 == 0, gp] > 0)
     }
 
@@ -58,6 +59,7 @@ cluster_profile.default <- function(O1,
         gp = which(O2.idx == i)
         if (length(gp) == 0) next
         O2.mean[1:m, i] = rowMeans(O2[pf2, gp] > 0)
+        if (sum.d1 == 0) next
         O2.mean[(m + sum.d1 + 1) : elem.len, i] = rowMeans(O2[d2 == 0, gp] > 0)
     }
 
