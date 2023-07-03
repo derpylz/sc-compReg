@@ -93,7 +93,7 @@ compreg.default <- function(symbol,
             OTF2 <- Matrix::t(B02[, diff.gene[j]] * TF[, (1 + n1) : (n1 + n2)])
             diff.gene.j <- diff.gene[j]
             id1 <- net.idx[net.idx[, 2] == diff.gene.j, 1]
-            id <- which((colSums(abs(OTF1)) + colSums(abs(OTF2))) > 0)
+            id <- which((Matrix::colSums(abs(OTF1)) + Matrix::colSums(abs(OTF2))) > 0)
             id <- intersect(id, id1)
             if (length(id) == 0) next
 
