@@ -69,17 +69,17 @@ compreg.default <- function(symbol,
         TF <- cbind(TG1[f, ], TG2[f, ])
         n1 <- ncol(TG1)
         n2 <- ncol(TG2)
-        TG1 <- t(TG1)
-        TG2 <- t(TG2)
+        TG1 <- Matrxi::t(TG1)
+        TG2 <- Matrxi::t(TG2)
         p.val <- sapply(1:ncol(TG1),
                         function(x) t.test(TG1[,x], TG2[,x], var.equal = T)$p.value)
         adjusted.p.val <- p.adjust(p.val, "fdr")
 
         diff.gene <- which(adjusted.p.val < sig.level)
 
-        corr.test.stat1 <- corrTest(t(TF[, 1:n1]), TG1)
+        corr.test.stat1 <- corrTest(Matrxi::t(TF[, 1:n1]), TG1)
         p1 <- 2 * pt(abs(corr.test.stat1), df = nrow(TG1) - 2, lower.tail = F)
-        corr.test.stat2 <- corrTest(t(TF[, (1 + n1) : (n1 + n2)]), TG2)
+        corr.test.stat2 <- corrTest(Matrxi::t(TF[, (1 + n1) : (n1 + n2)]), TG2)
         p2 <- 2 * pt(abs(corr.test.stat2), df = nrow(TG2) - 2, lower.tail = F)
         p.combine <- pmin(p1, p2, na.rm = T)
         net.idx <- which(p.combine < sig.level, arr.ind = T)
@@ -89,8 +89,8 @@ compreg.default <- function(symbol,
         LR.summary.p.val <- c()
 
         for (j in 1:length(diff.gene)) {
-            OTF1 <- t(B01[, diff.gene[j]] * TF[, 1:n1])
-            OTF2 <- t(B02[, diff.gene[j]] * TF[, (1 + n1) : (n1 + n2)])
+            OTF1 <- Matrxi::t(B01[, diff.gene[j]] * TF[, 1:n1])
+            OTF2 <- Matrxi::t(B02[, diff.gene[j]] * TF[, (1 + n1) : (n1 + n2)])
             diff.gene.j <- diff.gene[j]
             id1 <- net.idx[net.idx[, 2] == diff.gene.j, 1]
             id <- which((colSums(abs(OTF1)) + colSums(abs(OTF2))) > 0)
