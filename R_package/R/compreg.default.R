@@ -64,7 +64,7 @@ compreg.default <- function(symbol,
         B02 <- computeBZ(tf.binding, O2.mean[, i2], beta.sparse)
         TG1 <- E1[, E1.idx == i1]
         TG2 <- E2[, E2.idx == i2]
-        TG2 <- TG2 * mean(TG1) / mean(TG2)
+        TG2 <- TG2 * mean(as.numeric(TG1)) / mean(as.numeric(TG2))
         f <- match(tf.name, symbol, nomatch=0)
         TF <- cbind(TG1[f, ], TG2[f, ])
         n1 <- ncol(TG1)
