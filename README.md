@@ -2,7 +2,11 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5034676.svg)](https://doi.org/10.5281/zenodo.5034676)
 
-scCompReg (**S**ingle-**C**ell **C**omparative **R**egulatory analysis) is an R package that provides coupled clustering and joint embedding of scRNA-seq and scATAC-seq on one sample, and performs comparative gene regulatory analysis between two conditions.
+
+**This is a fork of the [sc-compReg repository by the Wong group](https://github.com/SUwonglab/sc-compReg). This fork fixes some bugs that I found while trying to run the code on my data. Most changes had to do with running the sc_compreg function on large sparse matrices and calling Matrix package functions explicitly.**
+
+
+scCompReg (**S**ingle-**C**ell **Comp**arative **Reg**ulatory analysis) is an R package that provides coupled clustering and joint embedding of scRNA-seq and scATAC-seq on one sample, and performs comparative gene regulatory analysis between two conditions.
 
 Please check the man page via `?function` (for example, `?sc_compreg`) for a detailed description of the types of inputs and outputs.
 
@@ -20,7 +24,7 @@ Please check the man page via `?function` (for example, `?sc_compreg`) for a det
 Use the following command to install scCompReg R package from source code:
 ```R
 require(devtools)
-devtools::install_github("SUwonglab/sc-compReg", ref="master", subdir="R_package")
+devtools::install_github("derpylz/sc-compReg", ref="master", subdir="R_package")
 ```
 
 ## Example ##
