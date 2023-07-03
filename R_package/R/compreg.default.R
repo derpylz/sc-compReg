@@ -77,9 +77,9 @@ compreg.default <- function(symbol,
 
         diff.gene <- which(adjusted.p.val < sig.level)
 
-        corr.test.stat1 <- corrTest(Matrix::t(TF[, 1:n1]), TG1)
+        corr.test.stat1 <- corrTest(as.matrix(Matrix::t(TF[, 1:n1])), as.matrix(TG1))
         p1 <- 2 * pt(abs(corr.test.stat1), df = nrow(TG1) - 2, lower.tail = F)
-        corr.test.stat2 <- corrTest(Matrix::t(TF[, (1 + n1) : (n1 + n2)]), TG2)
+        corr.test.stat2 <- corrTest(as.matrix(Matrix::t(TF[, (1 + n1) : (n1 + n2)])), as.matrix(TG2))
         p2 <- 2 * pt(abs(corr.test.stat2), df = nrow(TG2) - 2, lower.tail = F)
         p.combine <- pmin(p1, p2, na.rm = T)
         net.idx <- which(p.combine < sig.level, arr.ind = T)
