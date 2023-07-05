@@ -3,7 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5034676.svg)](https://doi.org/10.5281/zenodo.5034676)
 
 
-**This is a fork of the [sc-compReg repository by the Wong group](https://github.com/SUwonglab/sc-compReg). This fork fixes some bugs that I found while trying to run the code on my data. Most changes had to do with running the sc_compreg function on large sparse matrices and calling Matrix package functions explicitly.**
+**This is a fork of the [sc-compReg repository by the Wong group](https://github.com/SUwonglab/sc-compReg). This fork fixes some bugs that I found while trying to run the code on my data. Most changes had to do with running the sc_compreg function on large sparse matrices and calling Matrix package functions explicitly. I also enabled ARMA_64BIT_WORD to make it possible to process peak matrices with more peaks.**
 
 
 scCompReg (**S**ingle-**C**ell **Comp**arative **Reg**ulatory analysis) is an R package that provides coupled clustering and joint embedding of scRNA-seq and scATAC-seq on one sample, and performs comparative gene regulatory analysis between two conditions.

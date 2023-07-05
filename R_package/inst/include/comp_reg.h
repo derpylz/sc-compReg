@@ -11,6 +11,7 @@
 #include <fstream>
 #include <sstream>
 #include <cmath> // isnan
+#define ARMA_64BIT_WORD 1
 #include <RcppArmadillo.h>
 #include <math.h>
 #include <chrono> // for seeding

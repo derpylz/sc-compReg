@@ -1,4 +1,3 @@
-#define ARMA_64BIT_WORD 1
 #include "../inst/include/comp_reg.h"
 
 // [[Rcpp::export]]
